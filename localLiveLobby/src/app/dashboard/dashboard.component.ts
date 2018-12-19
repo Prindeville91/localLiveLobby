@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LobbyService } from '../lobby.service'
 
 @Component({
   selector: 'app-dashboard',

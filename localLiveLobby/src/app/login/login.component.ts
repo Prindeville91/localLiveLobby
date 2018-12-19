@@ -16,9 +16,13 @@ export class LoginComponent implements OnInit {
     private _router: Router
     ) { }
   loginUser :any 
+  user: any
   errors: any
   errorMessage: string[]
   ngOnInit() {
+    this.user = {
+      _id: ""
+    }
     this.loginUser = {
       username : "",
       password: ""
@@ -34,7 +38,8 @@ export class LoginComponent implements OnInit {
     }
     console.log("LOGIN COMPONENT TS")
     this._lobby.login(cred).subscribe(data=>{
-    this._router.navigate([data._id])
+        this.user = data
+    this._router.navigate([this.user._id])
     })
 
    

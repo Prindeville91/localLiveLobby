@@ -18,10 +18,14 @@ export class LoginComponent implements OnInit {
   loginUser :any 
   errors: any
   errorMessage: string[]
+  user: any;
   ngOnInit() {
     this.loginUser = {
       username : "",
       password: ""
+    }
+    this.user = {
+      _id:''
     }
   }
  goHome(){
@@ -34,9 +38,8 @@ export class LoginComponent implements OnInit {
     }
     console.log("LOGIN COMPONENT TS")
     this._lobby.login(cred).subscribe(data=>{
-    this._router.navigate([data._id])
+      this.user = data
+    this._router.navigate([this.user._id])
     })
-
-   
   }
 }

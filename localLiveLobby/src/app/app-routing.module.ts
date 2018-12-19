@@ -15,8 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: ':id', component: DashboardComponent },
   { path: ':id/player', component: PlayerDashComponent },
-  //put id back at beggining of url below
-  { path: 'player/characters/new', component: NewCharacterComponent },
+  { path: ':id/player/characters/new', component: NewCharacterComponent },
   { path: ':id/master',component: MasterDashComponent },
   { path: ':id/calendar', component: CalendarComponent },
   { path: '', pathMatch: 'full', redirectTo: 'login' },

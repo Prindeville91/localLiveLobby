@@ -27,27 +27,27 @@ var CharacterSchema = new mongoose.Schema({
         defualt: 'Neutral',
         required: true
     },
-    strength: {
+    str: {
         type: Number,
         required: true
     },
-    dexterity: {
+    dex: {
         type: Number,
         required: true
     },
-    constitution: {
+    con: {
         type: Number,
         required: true
     },
-    intelligence: {
+    int: {
         type: Number,
         required: true
     },
-    wisdom: {
+    wis: {
         type: Number,
         required: true
     },
-    charisma: {
+    cha: {
         type: Number,
         required: true
     },
@@ -60,3 +60,5 @@ var CharacterSchema = new mongoose.Schema({
         required: true
     }
 })
+
+mongoose.model('Character', CharacterSchema)

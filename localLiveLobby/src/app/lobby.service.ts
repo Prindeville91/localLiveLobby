@@ -30,4 +30,7 @@ export class LobbyService {
     console.log(cred)
     return this._lobby.post('/login', cred)
   }
+  createCharacter(newCharacter, id){
+    return this._lobby.post('/createCharacter/'+id, newCharacter)
+  }
 }

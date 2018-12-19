@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     fs = require('fs'),
     path = require('path')
-mongoose.connect('mongodb://localhost/basic_mongoose')
+mongoose.connect('mongodb://localhost/liveLocalLobby')
 
 var models_path = path.join(__dirname, './../models')
 fs.readdirSync(models_path).forEach(function(file){

@@ -1,0 +1,19 @@
+<p>
+  register works!
+</p>
+<form (submit)="validateForm()">
+    <div id="login">
+      <input type="text" [(ngModel)]="newUser.firstName" placeholder="TEST firstName" name = "firstName" required><br/>
+      <input type="email" [(ngModel)]="newUser.email" placeholder="TEST email" name = "email" required><br/>
+      <input type="text" [(ngModel)]="newUser.username" placeholder="TEST username" name = "username" required><br/>
+      <input type="text" [(ngModel)]="newUser.zipCode" placeholder="TEST zip code" name = "zipCode" required ng-pattern = "/^\d{5}$/"><br/>
+      <input type="password" [(ngModel)]="newUser.password" placeholder="TEST passwprd" name = "password" required><br/>
+      <input type="password"  [(ngModel)]="newUser.passwordConfirm" placeholder="TEST passwordConfirm" name = "passwordConfirm" required>
+    </div>
+  
+  <input type="submit" class="btn btn-success" value = "Register">
+  
+</form>
+<div id="errors" *ngIf="errorMessage.length" >
+      <p *ngFor="let x of errorMessage" >{{x}}</p>
+    </div>

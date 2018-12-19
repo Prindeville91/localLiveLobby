@@ -11,7 +11,10 @@ import {Router} from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _lobby: LobbyService) { }
+  constructor(
+    private _lobby: LobbyService,
+    private _router: Router
+    ) { }
   loginUser :any 
   errors: any
   errorMessage: string[]
@@ -21,15 +24,17 @@ export class LoginComponent implements OnInit {
       password: ""
     }
   }
-  try(){
-    console.log(this.loginUser)
-    this.login()
-    console.log("post try")
-  }
+ goHome(){
+   this._router.navigate([''])
+ }
   login(){
-    
-    this._lobby.getUserByUsername(this.loginUser.username).subscribe(data=>{
-     console.log(data)
+    let cred = {
+      user:this.loginUser.username,
+      pw: this.loginUser.password
+    }
+    console.log("LOGIN COMPONENT TS")
+    this._lobby.login(cred).subscribe(data=>{
+    this._router.navigate([data._id])
     })
 
    

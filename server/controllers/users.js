@@ -16,9 +16,16 @@ module.exports= {
         })
     },
     getUserByUsername:(req,res)=>{
+        console.log(req.params)
+        console.log("USERS JS PRE FIND")
         User.find({username: req.params.username}, (err,user)=>{
-            if(err){res.json(err)}
-            else{res.json(user)}
+            console.log("USERS JS POST GOT")
+            if(err){
+                console.log(err)
+                res.json(err)}
+            else{
+                console.log(user)
+                res.json(user)}
         })
         
     },
@@ -46,6 +53,28 @@ module.exports= {
         user.save(function(err){
             if(err){res.json(err)}
             else{(res.json(user))}
+        })
+    },
+    login: (req, res)=>{
+        console.log(req.body)
+        var username = req.body.user
+        var password = req.body.pw
+        console.log(username, password)
+        User.findOne({'username': username},(req, user)=>{
+            console.log(user._id)
+            if (user == null){
+                console.log("user does not exit")
+            }
+            else{
+                user.verifyPassword(password, (err, valid)=>{
+                    if(err){res.json(err)}
+                    else if(valid){res.json(user)}
+                    else{
+                        console.log("BAD MATCH")
+                        res.redirect('/')
+                    }
+                })
+            }
         })
     },
     update: (req, res)=>{

@@ -14,6 +14,7 @@ export class LobbyService {
     return this._lobby.get(`/users/id/${userID}`)
   }
   getUserByUsername(username: string){
+    console.log("LOBBY SERVICE TS")
     return this._lobby.get(`/users/name/${username}`)
   }
   getUserByEmail(email: string){
@@ -24,5 +25,9 @@ export class LobbyService {
   }
   addUser(newUser){
     return this._lobby.post('/users', newUser)
+  }
+  login(cred){
+    console.log(cred)
+    return this._lobby.post('/login', cred)
   }
 }

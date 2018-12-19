@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   user: any
   errors: any
   errorMessage: string[]
-  user: any;
   ngOnInit() {
     this.user = {
       _id: ""

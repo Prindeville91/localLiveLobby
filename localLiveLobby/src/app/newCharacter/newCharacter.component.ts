@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LobbyService } from '../lobby.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router, Params } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -14,8 +14,10 @@ export class NewCharacterComponent implements OnInit {
   errors: any;
   allRaces: any;
   allClasses: any;
+  id: any;
 
   constructor(
+    private _route: ActivatedRoute,
     private _lobby: LobbyService,
     private _router: Router,
     private _http: HttpClient
@@ -25,6 +27,14 @@ export class NewCharacterComponent implements OnInit {
     this.reset();
     this.getRaces();
     this.getClasses();
+    this.getCurrentId();
+  }
+
+  getCurrentId() {
+    this._route.params.subscribe((params: Params) => {
+      this.id = params.id
+      console.log(this.id)
+    })
   }
 
   reset() {
@@ -40,6 +50,7 @@ export class NewCharacterComponent implements OnInit {
       int: '',
       wis: '',
       cha: '',
+      con: '',
       role: '',
       description: ''
     }
@@ -68,6 +79,16 @@ export class NewCharacterComponent implements OnInit {
     })
   }
 
+  createCharacter(newCharacter) {
+    console.log(this.id)
+    let observable = this._lobby.createCharacter(newCharacter, this.id);
+    observable.subscribe(data => {
+      console.log("Data returned:", data)
+      if(data.message != "Couldn't add character"){
+        this._router.navigate([this.id,'player'])
+      }
+    })
+  }
 
   validateCharacterForm() {
     this.bIsError = false
@@ -118,10 +139,7 @@ export class NewCharacterComponent implements OnInit {
     }
     if (this.bIsError == false) {
       console.log("NO ERRORS!!!!!")
-      // let observable = this._lobby.createCharacter(this.newCharacter);
-      // observable.subscribe(data => {
-      //   console.log("Data returned:", data)
-      // })
+      this.createCharacter(this.newCharacter)
     }
   }
 

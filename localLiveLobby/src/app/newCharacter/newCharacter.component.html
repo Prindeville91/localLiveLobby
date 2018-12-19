@@ -9,13 +9,30 @@
     <input type="Number" name="newCharacter.level" [(ngModel)]="newCharacter.level">
   </label>
   <label>Race:
-    <input type="text" name="newCharacter.race" [(ngModel)]="newCharacter.race">
+    <select name="newCharacter.race" [(ngModel)]="newCharacter.race">
+      <option></option>
+      <option *ngFor="let race of allRaces.results">{{ race.name }}</option>
+    </select>
   </label>
   <label>Class:
-    <input type="text" name="newCharacter.class" [(ngModel)]="newCharacter.class">
+    <select type="text" name="newCharacter.class" [(ngModel)]="newCharacter.class">
+      <option></option>
+      <option *ngFor="let class of allClasses.results">{{ class.name }}</option>
+    </select>
   </label>
   <label>Alignment:
-    <input type="text" name="newCharacter.alignment" [(ngModel)]="newCharacter.alignment">
+    <select name="newCharacter.alignment" [(ngModel)]="newCharacter.alignment">
+      <option></option>
+      <option value="lawfulGood">Lawful Good</option>
+      <option value="lawfulNeutral">Lawful Neutral</option>
+      <option value="lawfulEvil">Lawful Evil</option>
+      <option value="neutralGood">Neutral Good</option>
+      <option value="neutral">Neutral</option>
+      <option value="neutralEvil">Neutral Evil</option>
+      <option value="chaoticGood">Chaotic Good</option>
+      <option value="chaoticNeutral">Chaotic Neutral</option>
+      <option value="chaoticEvil">Chaotic Evil</option>
+    </select>
   </label>
   <hr>
   <br>
@@ -39,7 +56,7 @@
   </label>
   <label>Main Role:
     <select name="newCharacter.role" [(ngModel)]="newCharacter.role">
-      <option>--Select Role--</option>
+      <option></option>
       <option value="frontline.">Frontline</option>
       <option value="support">Support/Healer</option>
       <option value="blastCaster">Blast Caster</option>
@@ -51,7 +68,7 @@
   <br>
   <label>Description:</label>
   <br>
-  <textarea rows=10 cols=100  name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea>
+  <textarea rows=10 cols=100 name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea>
   <br>
   <input type="Submit" value="Submit">
   <hr>

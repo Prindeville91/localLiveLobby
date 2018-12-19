@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LobbyService } from '../lobby.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-newCharacter',
@@ -11,14 +12,19 @@ export class NewCharacterComponent implements OnInit {
   newCharacter: any;
   bIsError: Boolean;
   errors: any;
+  allRaces: any;
+  allClasses: any;
 
   constructor(
     private _lobby: LobbyService,
-    private _router: Router
+    private _router: Router,
+    private _http: HttpClient
   ) { }
 
   ngOnInit() {
     this.reset();
+    this.getRaces();
+    this.getClasses();
   }
 
   reset() {
@@ -39,6 +45,8 @@ export class NewCharacterComponent implements OnInit {
     }
     this.bIsError = false
     this.errors = []
+    this.allRaces = ''
+    this.allClasses = ''
   }
 
   setErrors(string) {
@@ -47,10 +55,16 @@ export class NewCharacterComponent implements OnInit {
   }
 
   getRaces() {
-    console.log("Getting Races")
-    let observable = this._lobby.getRaces();
+    let observable = this._http.get('http://www.dnd5eapi.co/api/races');
     observable.subscribe(data => {
-      console.log("Returned data:",data)
+      this.allRaces = data
+    })
+  }
+  getClasses() {
+    let observable = this._http.get('http://www.dnd5eapi.co/api/classes');
+    observable.subscribe(data => {
+      console.log(data)
+      this.allClasses = data
     })
   }
 
@@ -104,10 +118,10 @@ export class NewCharacterComponent implements OnInit {
     }
     if (this.bIsError == false) {
       console.log("NO ERRORS!!!!!")
-      let observable = this._lobby.createCharacter(this.newCharacter);
-      observable.subscribe(data => {
-        console.log("Data returned:", data)
-      })
+      // let observable = this._lobby.createCharacter(this.newCharacter);
+      // observable.subscribe(data => {
+      //   console.log("Data returned:", data)
+      // })
     }
   }
 

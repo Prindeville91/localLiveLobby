@@ -1,0 +1,61 @@
+<form (submit)="validateCharacterForm()" class="postForm">
+  <label>Name:
+    <input type="text" name="newCharacter.name" [(ngModel)]="newCharacter.name">
+  </label>
+  <label>Apperance:
+    <input type="text" name="newCharacter.apperance" [(ngModel)]="newCharacter.apperance">
+  </label>
+  <label>Level:
+    <input type="Number" name="newCharacter.level" [(ngModel)]="newCharacter.level">
+  </label>
+  <label>Race:
+    <input type="text" name="newCharacter.race" [(ngModel)]="newCharacter.race">
+  </label>
+  <label>Class:
+    <input type="text" name="newCharacter.class" [(ngModel)]="newCharacter.class">
+  </label>
+  <label>Alignment:
+    <input type="text" name="newCharacter.alignment" [(ngModel)]="newCharacter.alignment">
+  </label>
+  <hr>
+  <br>
+  <label>Strength:
+    <input type="number" name="newCharacter.str" [(ngModel)]="newCharacter.str">
+  </label>
+  <label>Dexterity:
+    <input type="number" name="newCharacter.dex" [(ngModel)]="newCharacter.dex">
+  </label>
+  <label>Constitution:
+    <input type="number" name="newCharacter.con" [(ngModel)]="newCharacter.con">
+  </label>
+  <label>Intelligence:
+    <input type="number" name="newCharacter.int" [(ngModel)]="newCharacter.int">
+  </label>
+  <label>Wisdom:
+    <input type="number" name="newCharacter.wis" [(ngModel)]="newCharacter.wis">
+  </label>
+  <label>Charisma:
+    <input type="number" name="newCharacter.cha" [(ngModel)]="newCharacter.cha">
+  </label>
+  <label>Main Role:
+    <select name="newCharacter.role" [(ngModel)]="newCharacter.role">
+      <option>--Select Role--</option>
+      <option value="frontline.">Frontline</option>
+      <option value="support">Support/Healer</option>
+      <option value="blastCaster">Blast Caster</option>
+      <option value="rangedDPS">Ranged DPS</option>
+      <option value="meleeDPS">Melee DPS</option>
+      <option value="face">Face</option>
+    </select>
+  </label>
+  <br>
+  <label>Description:</label>
+  <br>
+  <textarea rows=10 cols=100  name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea>
+  <br>
+  <input type="Submit" value="Submit">
+  <hr>
+</form>
+<div *ngFor="let error of errors">
+  {{ error }}
+</div>

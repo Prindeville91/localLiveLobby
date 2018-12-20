@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http'
 import { LobbyService } from './lobby.service'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+import { ViewCharacterComponent } from './viewCharacter/viewCharacter.component';
 
 @NgModule({
    declarations: [
@@ -26,7 +27,8 @@ import { NewCharacterComponent } from './newCharacter/newCharacter.component';
       LoginComponent,
       RegisterComponent,
       PagenotfoundComponent,
-      NewCharacterComponent
+      NewCharacterComponent,
+      ViewCharacterComponent
    ],
    imports: [
       BrowserModule,

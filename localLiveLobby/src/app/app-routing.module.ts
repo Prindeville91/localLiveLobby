@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component'
 import { LoginComponent } from './login/login.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+import { ViewCharacterComponent } from './viewCharacter/viewCharacter.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: ':id', component: DashboardComponent },
   { path: ':id/player', component: PlayerDashComponent },
   { path: ':id/player/characters/new', component: NewCharacterComponent },
+  { path: ':id/player/:cId/character', component: ViewCharacterComponent },
   { path: ':id/master',component: MasterDashComponent },
   { path: ':id/calendar', component: CalendarComponent },
   { path: '', pathMatch: 'full', redirectTo: 'login' },

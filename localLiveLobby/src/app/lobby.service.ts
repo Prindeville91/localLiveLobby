@@ -33,4 +33,18 @@ export class LobbyService {
   createCharacter(newCharacter, id){
     return this._lobby.post('/createCharacter/'+id, newCharacter)
   }
+  getAllCharacters(id){
+    return this._lobby.get('/getAllCharacters/'+id)
+  }
+  getCharacter(id){
+    return this._lobby.get('/getCharacter/'+id)
+  }
+
+  deleteCharacter(id) {
+    return this._lobby.delete('/deleteCharacter/'+id)
+  }
+
+  removeCharacter(pId, cId) {
+    return this._lobby.delete('/removeCharacter/'+pId+'/'+cId)
+  }
 }

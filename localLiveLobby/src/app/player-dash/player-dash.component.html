@@ -2,8 +2,8 @@
   player-dash works!
 </p>
 
-<div id="characters">
-  <button>View Character Sheet</button><br/>
+<div *ngIf="bIsCharacter" id="characters">
+  <button  *ngFor="let Character of allCharcters" (click)="viewCharacterSheet(Character._id)">View {{ Character.name }}'s Sheet </button><br/>
 </div>
 <button [routerLink]="['/',id,'player','characters','new']">Create New Character Sheet</button><br/>
 <div id="campaigns">
@@ -11,3 +11,4 @@
 </div>
 <button>Find Campaign</button><br/>
 <button (click)="backToDash()">Back to Dash</button>
+<router-outlet></router-outlet>

@@ -9,14 +9,14 @@ module.exports= {
         })
     },
     getUserbyId: (req, res) =>{
-        console.log("USERS JS")
-        console.log(req.params)
+    
         var id = req.params.what
         User.findById(id, (err, user)=>{
             if(err){res.json(err)}
             else{res.json(user)}
         })
     },
+  
     getUserByUsername:(req,res)=>{
         console.log(req.params)
         console.log("USERS JS PRE FIND")
@@ -39,7 +39,8 @@ module.exports= {
 
     },
     findUserByZip:(req,res)=>{
-        User.find({zipCode: req.params.zipCode}, (err,user)=>{
+        console.log(req.params)
+        User.find({zipCode: req.params.what}, (err,user)=>{
             if(err){res.json(err)}
             else{res.json(user)}
         })

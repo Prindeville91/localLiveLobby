@@ -15,7 +15,11 @@ module.exports = function(app){
             console.log(req.params.what)
             
         }
-        else if(req.params.how === "id"){console.log(req.params.what)}
+        else if(req.params.how === "id"){
+            console.log(req.params.how)
+            console.log(req.params.what)
+            users.getUserbyId(req,res)
+        }
     })
     app.post('/login', (req,res)=>{
         console.log("ROUTES JS")

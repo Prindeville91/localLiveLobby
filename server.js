@@ -1,4 +1,4 @@
-var express, app, bodyParser, server, mongoose, path, bcrypt, session
+var express, app, bodyParser, server, mongoose, path, bcrypt, session, cors
 
 express = require('express')
 crypto = require('crypto')
@@ -7,6 +7,7 @@ session = require("express-session");
 bodyParser = require('body-parser')
 path = require('path')
 bcrypt = require('mongoose-bcrypt')
+
 app.use(session({
     secret:"gnomon",
     resave: false,

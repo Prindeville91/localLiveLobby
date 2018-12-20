@@ -9,7 +9,9 @@ module.exports= {
         })
     },
     getUserbyId: (req, res) =>{
-        var id = req.params.id
+        console.log("USERS JS")
+        console.log(req.params)
+        var id = req.params.what
         User.findById(id, (err, user)=>{
             if(err){res.json(err)}
             else{res.json(user)}

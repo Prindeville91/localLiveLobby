@@ -30,4 +30,8 @@ export class LobbyService {
     console.log(cred)
     return this._lobby.post('/login', cred)
   }
+  getZipsByRadius(zip: string, rad: number){
+    console.log(zip, rad)
+    return this._lobby.get(`https://www.zipcodeapi.com/rest/micPRvxp2Tg49S4FThJgGYgcprx8u8FLj7HIPqCYBqKYFNRnrPDDllVCJRDL1pjZ/radius.json/${zip}/${rad}/miles?minimal`)
+  }
 }

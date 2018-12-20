@@ -64,9 +64,9 @@ module.exports= {
         var password = req.body.pw
         console.log(username, password)
         User.findOne({'username': username},(req, user)=>{
-            console.log(user._id)
+            // console.log(user._id)
             if (user == null){
-                console.log("user does not exit")
+                console.log("user does not exist")
             }
             else{
                 user.verifyPassword(password, (err, valid)=>{

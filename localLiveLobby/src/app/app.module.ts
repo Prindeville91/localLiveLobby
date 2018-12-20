@@ -16,13 +16,9 @@ import { HttpClientModule }  from '@angular/common/http'
 
 import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
-<<<<<<< HEAD
-import { FindPlayersComponent } from './find-players/find-players.component';
-import { ViewUserComponent } from './view-user/view-user.component'
-=======
 import { FindPlayersComponent } from './find-players/find-players.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
->>>>>>> e63b2611dc991438ceabe517d000640be221f36f
+import { ViewUserComponent } from './view-user/view-user.component'
 
 @NgModule({
   declarations: [
@@ -36,11 +32,8 @@ import { NewCharacterComponent } from './newCharacter/newCharacter.component';
     PagenotfoundComponent,
     NewCampaignComponent,
     FindPlayersComponent,
-<<<<<<< HEAD
-    ViewUserComponent
-=======
-     NewCharacterComponent
->>>>>>> e63b2611dc991438ceabe517d000640be221f36f
+     NewCharacterComponent,
+     ViewUserComponent
   ],
   imports: [
     BrowserModule,

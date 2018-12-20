@@ -1,0 +1,9 @@
+Your Zip Code: {{thisGuy.zipCode}}<br/>
+Find players in a <input type="number" [(ngModel)]="radius" default = 1> mile radius
+<button (click)="findPlayers()">Find</button>
+
+<div id="users" *ngIf="users.length">
+  <p>Users in your area:</p>
+  <button *ngFor="let user of users" >{{user.username}}</button>
+
+</div>

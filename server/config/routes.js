@@ -17,7 +17,19 @@ module.exports = function (app) {
             console.log(req.params.what)
 
         }
+
+        else if(req.params.how === "id"){
+            
+            users.getUserbyId(req,res)
+        }
+        else if(req.params.how === "zip"){
+            console.log(req.params.how, req.params.what)
+            
+            users.findUserByZip(req,res)
+        }
+
         else if (req.params.how === "id") { console.log(req.params.what) }
+
     })
     app.post('/login', (req, res) => {
         console.log("ROUTES JS")

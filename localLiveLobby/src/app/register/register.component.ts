@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LobbyService } from '../lobby.service'
-
+import {Router} from '@angular/router'
  
 @Component({
   selector: 'app-register',
@@ -10,11 +10,18 @@ import { LobbyService } from '../lobby.service'
 export class RegisterComponent implements OnInit {
   newUser: any
   errors: any
+  user: any
   errorMessage: string[]
-  constructor(private _lobby: LobbyService) { }
+  constructor(
+    private _lobby: LobbyService,
+    private _router: Router
+    ) { }
 
   ngOnInit() {
     this.errorMessage = []
+    this.user = {
+      _id: ""
+    }
     this.newUser = {
       firstName : "",
       email: "",
@@ -25,7 +32,10 @@ export class RegisterComponent implements OnInit {
   }
   register(){
     console.log(this.newUser)
-    this._lobby.addUser(this.newUser).subscribe(data=>console.log(data))
+    this._lobby.addUser(this.newUser).subscribe(data=>{
+      this.user = data
+      this._router.navigate([this.user._id])
+    })
     
   }
   validateForm(){

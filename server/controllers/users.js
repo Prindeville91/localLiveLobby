@@ -98,5 +98,5 @@ module.exports= {
     },
     destroy: (req, res)=>{
         User.findByIdAndRemove(req.params.id, ()=> res.redirect('/'))
-    } 
+    }
 }

@@ -13,10 +13,16 @@ import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http'
+
 import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
+<<<<<<< HEAD
 import { FindPlayersComponent } from './find-players/find-players.component';
 import { ViewUserComponent } from './view-user/view-user.component'
+=======
+import { FindPlayersComponent } from './find-players/find-players.component'
+import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+>>>>>>> e63b2611dc991438ceabe517d000640be221f36f
 
 @NgModule({
   declarations: [
@@ -30,7 +36,11 @@ import { ViewUserComponent } from './view-user/view-user.component'
     PagenotfoundComponent,
     NewCampaignComponent,
     FindPlayersComponent,
+<<<<<<< HEAD
     ViewUserComponent
+=======
+     NewCharacterComponent
+>>>>>>> e63b2611dc991438ceabe517d000640be221f36f
   ],
   imports: [
     BrowserModule,
@@ -42,5 +52,6 @@ import { ViewUserComponent } from './view-user/view-user.component'
   ],
   providers: [LobbyService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

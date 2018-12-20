@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http'
 import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
-import { FindPlayersComponent } from './find-players/find-players.component'
+import { FindPlayersComponent } from './find-players/find-players.component';
+import { ViewUserComponent } from './view-user/view-user.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FindPlayersComponent } from './find-players/find-players.component'
     RegisterComponent,
     PagenotfoundComponent,
     NewCampaignComponent,
-    FindPlayersComponent
+    FindPlayersComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,

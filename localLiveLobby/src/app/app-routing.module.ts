@@ -8,10 +8,12 @@ import { RegisterComponent } from './register/register.component'
 import { LoginComponent } from './login/login.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 import { FindPlayersComponent } from './find-players/find-players.component'
+import { ViewUserComponent } from './view-user/view-user.component'
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'view/:user', component: ViewUserComponent },
   { path: ':id/master/findPlayers', component: FindPlayersComponent },
   { path: 'register', component: RegisterComponent },
   { path: ':id', component: DashboardComponent },

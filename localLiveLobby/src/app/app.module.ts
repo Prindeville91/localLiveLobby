@@ -13,9 +13,11 @@ import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http'
+
 import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
 import { FindPlayersComponent } from './find-players/find-players.component'
+import { NewCharacterComponent } from './newCharacter/newCharacter.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FindPlayersComponent } from './find-players/find-players.component'
     RegisterComponent,
     PagenotfoundComponent,
     NewCampaignComponent,
-    FindPlayersComponent
+    FindPlayersComponent,
+     NewCharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,5 +43,6 @@ import { FindPlayersComponent } from './find-players/find-players.component'
   ],
   providers: [LobbyService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

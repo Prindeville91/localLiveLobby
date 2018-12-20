@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
       username : "",
       password: ""
     }
+    this.user = {
+      _id:''
+    }
   }
  goHome(){
    this._router.navigate([''])
@@ -38,10 +41,11 @@ export class LoginComponent implements OnInit {
     }
     console.log("LOGIN COMPONENT TS")
     this._lobby.login(cred).subscribe(data=>{
-        this.user = data
+
+      this.user = data
+
+
     this._router.navigate([this.user._id])
     })
-
-   
   }
 }

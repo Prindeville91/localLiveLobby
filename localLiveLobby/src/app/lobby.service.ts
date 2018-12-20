@@ -35,8 +35,13 @@ export class LobbyService {
     console.log(cred)
     return this._lobby.post('/login', cred)
   }
+
   getZipsByRadius(zip: string, rad: number){
     console.log(zip, rad)
     return this._lobby.get(`https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=${zip}&minimumradius=0&maximumradius=${rad}&key=SNTL6WIJGRY6U2YYC3IP`)
+  }
+  createCharacter(newCharacter, id){
+    return this._lobby.post('/createCharacter/'+id, newCharacter)
+
   }
 }

@@ -7,7 +7,11 @@ import { PlayerDashComponent } from './player-dash/player-dash.component'
 import { RegisterComponent } from './register/register.component'
 import { LoginComponent } from './login/login.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
+
 import { FindPlayersComponent } from './find-players/find-players.component'
+
+import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+
 
 
 const routes: Routes = [
@@ -16,7 +20,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: ':id', component: DashboardComponent },
   { path: ':id/player', component: PlayerDashComponent },
-  { path: ':id/master',component: MasterDashComponent},
+
+  { path: ':id/player/characters/new', component: NewCharacterComponent },
+  { path: ':id/master',component: MasterDashComponent },
+
   { path: ':id/calendar', component: CalendarComponent },
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', component: PagenotfoundComponent }

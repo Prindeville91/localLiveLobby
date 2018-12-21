@@ -58,4 +58,24 @@ module.exports = function (app) {
         console.log("create character Route")
         characters.createCharacter(req, res)
     })
+
+    app.get('/getAllCharacters/:id', (req, res) => {
+        console.log("Get all characters Route")
+        characters.getAllCharacters(req, res)
+    })
+
+    app.get('/getCharacter/:id', (req, res) => {
+        console.log("Get character Route")
+        characters.getCharacter(req, res)
+    })
+
+    app.delete('/deleteCharacter/:id', (req, res) => {
+        console.log("Delete Character Route")
+        characters.deleteCharacter(req, res)
+    })
+
+    app.delete('/removeCharacter/:pId/:cId', (req, res) => {
+        console.log("Remove character Route")
+        characters.removeCharacter(req, res)
+    })
 }

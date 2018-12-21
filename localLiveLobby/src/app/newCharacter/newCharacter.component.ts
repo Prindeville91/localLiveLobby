@@ -15,6 +15,7 @@ export class NewCharacterComponent implements OnInit {
   allRaces: any;
   allClasses: any;
   id: any;
+  data: any;
 
   constructor(
     private _route: ActivatedRoute,
@@ -58,6 +59,11 @@ export class NewCharacterComponent implements OnInit {
     this.errors = []
     this.allRaces = ''
     this.allClasses = ''
+  }
+
+  goToPlayerDash(){
+    console.log(this.id)
+    this._router.navigate([this.id+"/player"])
   }
 
   setErrors(string) {

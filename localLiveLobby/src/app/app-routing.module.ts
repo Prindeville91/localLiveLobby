@@ -12,6 +12,7 @@ import { FindPlayersComponent } from './find-players/find-players.component'
 import { ViewUserComponent } from './view-user/view-user.component'
 
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+import { ViewCharacterComponent } from './viewCharacter/viewCharacter.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: ':id/player', component: PlayerDashComponent },
 
   { path: ':id/player/characters/new', component: NewCharacterComponent },
+  { path: ':id/player/:cId/character', component: ViewCharacterComponent },
   { path: ':id/master',component: MasterDashComponent },
 
   { path: ':id/calendar', component: CalendarComponent },

@@ -18,6 +18,7 @@ import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
 import { FindPlayersComponent } from './find-players/find-players.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+
 import { ViewUserComponent } from './view-user/view-user.component'
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ViewUserComponent } from './view-user/view-user.component'
   ],
   providers: [LobbyService],
   bootstrap: [AppComponent]
+
 
 })
 export class AppModule { }

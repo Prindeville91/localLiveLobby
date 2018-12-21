@@ -2,12 +2,17 @@
   player-dash works!
 </p>
 
-<div id="characters">
-  <button class="btn btn-success">View Character Sheet</button><br/>
+
+<div *ngIf="bIsCharacter" id="characters">
+  <button  *ngFor="let Character of allCharcters" (click)="viewCharacterSheet(Character._id)">View {{ Character.name }}'s Sheet </button><br/>
+
 </div>
 <button [routerLink]="['/',id,'player','characters','new']">Create New Character Sheet</button><br/>
 <div id="campaigns">
   <button>View Campaign</button><br/>
 </div>
-<button class="btn btn-primary">Find Campaign</button><br/>
-<button class="btn btn-danger" (click)="backToDash()">Back to Dash</button>
+
+<button>Find Campaign</button><br/>
+<button (click)="backToDash()">Back to Dash</button>
+<router-outlet></router-outlet>
+

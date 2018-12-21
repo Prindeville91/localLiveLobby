@@ -71,8 +71,9 @@
   <textarea rows=10 cols=100 name="newCharacter.description" [(ngModel)]="newCharacter.description"></textarea>
   <br>
   <input type="Submit" value="Submit">
-  <hr>
 </form>
+<button (click)="goToPlayerDash()">Back</button>
+<hr>
 <div *ngFor="let error of errors">
   {{ error }}
 </div>

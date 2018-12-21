@@ -1,0 +1,43 @@
+<h3>Character:</h3>
+<hr>
+<p>
+  Name:{{ currentCharacter.name }}
+  <br>
+  Race: {{ currentCharacter.race }}
+  <br>
+  level: {{ currentCharacter.level }}
+  <br>
+  Class: {{ currentCharacter.class }}
+  <br>
+  Alignment: {{ currentCharacter.alignment }}
+  <br>
+  Role: {{ currentCharacter.role }}
+  <br>
+  Description: {{ currentCharacter.description }}
+</p>
+<hr>
+<h3>Attributes:</h3>
+<hr>
+<p>
+  Strength: {{ currentCharacter.str }}
+  <br>
+  Dexterity: {{ currentCharacter.dex }}
+  <br>
+  Intelligence: {{ currentCharacter.int }}
+  <br>
+  Wisdom: {{ currentCharacter.wis }}
+  <br>
+  Charisma: {{ currentCharacter.cha }}
+  <br>
+  Constitution: {{ currentCharacter.con }}
+</p>
+<hr>
+<button (click)="backToPlayerDash()">Back</button>
+<button (click)="editCharacter()">Edit</button>
+<button (click)="deleteCharacter()">Delete</button>
+
+
+
+
+
+<router-outlet></router-outlet>

@@ -18,6 +18,7 @@ import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
 import { FindPlayersComponent } from './find-players/find-players.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+import { ViewCharacterComponent } from './viewCharacter/viewCharacter.component'
 
 import { ViewUserComponent } from './view-user/view-user.component'
 
@@ -34,7 +35,8 @@ import { ViewUserComponent } from './view-user/view-user.component'
     NewCampaignComponent,
     FindPlayersComponent,
      NewCharacterComponent,
-     ViewUserComponent
+     ViewUserComponent,
+     ViewCharacterComponent
   ],
   imports: [
     BrowserModule,

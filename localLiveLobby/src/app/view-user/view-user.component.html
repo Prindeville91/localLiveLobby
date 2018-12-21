@@ -72,5 +72,9 @@
 
 
 
-<h4>My campaigns:</h4>
+<!-- <h4>My campaigns:</h4> -->
 <h4>Check out my Character Sheets:</h4>
+<div *ngIf="characters.length" id="characters">
+        <button  *ngFor="let Character of characters" (click)="viewCharacterSheet(Character._id)">View {{ Character.name }}'s Sheet </button><br/>
+      
+      </div>

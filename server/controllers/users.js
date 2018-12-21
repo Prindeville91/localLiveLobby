@@ -20,7 +20,7 @@ module.exports= {
     getUserByUsername:(req,res)=>{
         console.log(req.params)
         console.log("USERS JS PRE FIND")
-        User.find({username: req.params.username}, (err,user)=>{
+        User.find({username: req.params.what}, (err,user)=>{
             console.log("USERS JS POST GOT")
             if(err){
                 console.log(err)
@@ -98,5 +98,20 @@ module.exports= {
     },
     destroy: (req, res)=>{
         User.findByIdAndRemove(req.params.id, ()=> res.redirect('/'))
+    },
+    editAvailability(req, res){
+        
+        User.findByIdAndUpdate(req.params.id, {
+            $set:{
+                availability: req.body
+            },
+        },
+        (err, user)=>{
+            if(err){res.json(err)}
+            else{res.json(user)}
+        }
+        )
+        
+        
     }
 }

@@ -44,4 +44,9 @@ export class LobbyService {
     return this._lobby.post('/createCharacter/'+id, newCharacter)
 
   }
+  editAvailability(id: string, availability: any){
+    console.log("LOBBY SERVICE TS")
+    console.log(id, availability)
+    return this._lobby.put(`/users/${id}`, availability)
+  }
 }

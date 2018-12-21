@@ -17,7 +17,19 @@ module.exports = function (app) {
             console.log(req.params.what)
 
         }
+
+        else if(req.params.how === "id"){
+            
+            users.getUserbyId(req,res)
+        }
+        else if(req.params.how === "zip"){
+            console.log(req.params.how, req.params.what)
+            
+            users.findUserByZip(req,res)
+        }
+
         else if (req.params.how === "id") { console.log(req.params.what) }
+
     })
     app.post('/login', (req, res) => {
         console.log("ROUTES JS")
@@ -25,15 +37,19 @@ module.exports = function (app) {
 
 
     })
+    app.put('/users/:id', (req, res)=>{
+        console.log("ROUTES JS")
+        users.editAvailability(req, res)
+    })
     app.post('/users', (req, res) => {
         users.create(req, res)
         console.log("ROUTES JS")
     })
-    app.put('/users/:id', (req, res) => {
-        console.log("ROUTES", req.body)
-        users.update(req, res)
+    // app.put('/users/:id', (req, res) => {
+    //     console.log("ROUTES", req.body)
+    //     users.update(req, res)
 
-    })
+    // })
     app.delete('/users/:id', (req, res) => {
         users.destroy(req, res)
     })

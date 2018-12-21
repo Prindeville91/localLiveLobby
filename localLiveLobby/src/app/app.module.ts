@@ -13,35 +13,40 @@ import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http'
-import { LobbyService } from './lobby.service'
+
+import { LobbyService } from './lobby.service';
+import { NewCampaignComponent } from './new-campaign/new-campaign.component';
+import { FindPlayersComponent } from './find-players/find-players.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
-import { ViewCharacterComponent } from './viewCharacter/viewCharacter.component';
+
+import { ViewUserComponent } from './view-user/view-user.component'
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      DashboardComponent,
-      PlayerDashComponent,
-      MasterDashComponent,
-      CalendarComponent,
-      LoginComponent,
-      RegisterComponent,
-      PagenotfoundComponent,
-      NewCharacterComponent,
-      ViewCharacterComponent
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      RouterModule,
-      FormsModule,
-      HttpClientModule
-   ],
-   providers: [
-      LobbyService
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    PlayerDashComponent,
+    MasterDashComponent,
+    CalendarComponent,
+    LoginComponent,
+    RegisterComponent,
+    PagenotfoundComponent,
+    NewCampaignComponent,
+    FindPlayersComponent,
+     NewCharacterComponent,
+     ViewUserComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule
+    
+  ],
+  providers: [LobbyService],
+  bootstrap: [AppComponent]
+
+
 })
 export class AppModule { }

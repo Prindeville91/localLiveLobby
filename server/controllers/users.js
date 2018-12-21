@@ -9,16 +9,18 @@ module.exports= {
         })
     },
     getUserbyId: (req, res) =>{
-        var id = req.params.id
+    
+        var id = req.params.what
         User.findById(id, (err, user)=>{
             if(err){res.json(err)}
             else{res.json(user)}
         })
     },
+  
     getUserByUsername:(req,res)=>{
         console.log(req.params)
         console.log("USERS JS PRE FIND")
-        User.find({username: req.params.username}, (err,user)=>{
+        User.find({username: req.params.what}, (err,user)=>{
             console.log("USERS JS POST GOT")
             if(err){
                 console.log(err)
@@ -37,7 +39,8 @@ module.exports= {
 
     },
     findUserByZip:(req,res)=>{
-        User.find({zipCode: req.params.zipCode}, (err,user)=>{
+        console.log(req.params)
+        User.find({zipCode: req.params.what}, (err,user)=>{
             if(err){res.json(err)}
             else{res.json(user)}
         })
@@ -61,9 +64,9 @@ module.exports= {
         var password = req.body.pw
         console.log(username, password)
         User.findOne({'username': username},(req, user)=>{
-            console.log(user._id)
+            // console.log(user._id)
             if (user == null){
-                console.log("user does not exit")
+                console.log("user does not exist")
             }
             else{
                 user.verifyPassword(password, (err, valid)=>{
@@ -95,5 +98,20 @@ module.exports= {
     },
     destroy: (req, res)=>{
         User.findByIdAndRemove(req.params.id, ()=> res.redirect('/'))
+    },
+    editAvailability(req, res){
+        
+        User.findByIdAndUpdate(req.params.id, {
+            $set:{
+                availability: req.body
+            },
+        },
+        (err, user)=>{
+            if(err){res.json(err)}
+            else{res.json(user)}
+        }
+        )
+        
+        
     }
 }

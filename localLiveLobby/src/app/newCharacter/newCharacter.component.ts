@@ -90,9 +90,9 @@ export class NewCharacterComponent implements OnInit {
     let observable = this._lobby.createCharacter(newCharacter, this.id);
     observable.subscribe(data => {
       console.log("Data returned:", data)
-      if(data.message != "Couldn't add character"){
-        this._router.navigate([this.id,'player'])
-      }
+      // if(data.message !== "Couldn't add character"){
+      //   this._router.navigate([this.id,'player'])
+      // }
     })
   }
 

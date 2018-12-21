@@ -18,6 +18,7 @@ import { LobbyService } from './lobby.service';
 import { NewCampaignComponent } from './new-campaign/new-campaign.component';
 import { FindPlayersComponent } from './find-players/find-players.component'
 import { NewCharacterComponent } from './newCharacter/newCharacter.component';
+import { ViewUserComponent } from './view-user/view-user.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NewCharacterComponent } from './newCharacter/newCharacter.component';
     PagenotfoundComponent,
     NewCampaignComponent,
     FindPlayersComponent,
-     NewCharacterComponent
+     NewCharacterComponent,
+     ViewUserComponent
   ],
   imports: [
     BrowserModule,

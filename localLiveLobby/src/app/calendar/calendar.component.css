@@ -1,0 +1,24 @@
+
+#week button{
+    display: inline-block;
+    margin: 4px;
+
+    }
+.toggle{
+    background-color: darkslategray;
+    border-radius: 5%;
+    width: 120px;
+    vertical-align: center;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    
+}
+.toggle button{
+    display: block;
+    margin : 10px auto;
+}
+
+#submit{
+    vertical-align: center;
+}

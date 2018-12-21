@@ -13,6 +13,162 @@ var UserSchema = new mongoose.Schema({
         minlength: [8, "Passwords must be at least 8 characters long"],
         bcrypt: true
     },
+    availability:{
+        monday:{
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        tuesday:{
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        wednesday:{
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        thursday: {
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        friday: {
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        saturday: {
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+        sunday: {
+            morning: {
+                type: Boolean,
+                default: true
+            },
+            day:{
+                type: Boolean,
+                default: true
+            },
+            afternoon: {
+                type: Boolean,
+                default: true
+            },
+            evening:{
+                type: Boolean,
+                default: true
+            },
+            night:{
+                type: Boolean,
+                default: true
+            },
+        },
+    },
     email: {
         type: String,
         required: [true, "Please enter a contact email"],

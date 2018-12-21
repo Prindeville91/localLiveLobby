@@ -4,6 +4,6 @@ Find players in a <input type="number" [(ngModel)]="radius" default = 1> mile ra
 
 <div id="users" *ngIf="users.length">
   <p>Users in your area:</p>
-  <button *ngFor="let user of users" >{{user.username}}</button>
+  <button *ngFor="let user of users" routerLink = "/view/{{user.username}}">{{user.username}}</button>
 
 </div>

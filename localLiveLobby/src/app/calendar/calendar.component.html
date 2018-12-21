@@ -1,3 +1,106 @@
-<p>
-  calendar works!
-</p>
+
+<h2>Weekly Availability</h2>
+<div id="week">
+<button  *ngIf="seeMon == false" class = "btn btn-secondary" (click)="toggleMon()">MON</button>
+<button  *ngIf="seeMon" class = "btn btn-primary" (click)="toggleMon()">MON</button> |
+<button  *ngIf="seeTue == false" class = "btn btn-secondary" (click)="toggleTue()">TUE</button> 
+<button  *ngIf="seeTue" class = "btn btn-primary" (click)="toggleTue()">TUE</button> |
+<button  *ngIf="seeWed == false" class = "btn btn-secondary" (click)="toggleWed()" >WED</button> 
+<button  *ngIf="seeWed" class = "btn btn-primary" (click)="toggleWed()" >WED</button> |
+<button  *ngIf="seeThr == false" class = "btn btn-secondary" (click)="toggleThr()">THR</button>
+<button  *ngIf="seeThr" class = "btn btn-primary" (click)="toggleThr()">THR</button> |
+<button  *ngIf="seeFri == false" class = "btn btn-secondary" (click)="toggleFri()">FRI</button>
+<button  *ngIf="seeFri" class = "btn btn-primary" (click)="toggleFri()">FRI</button> |
+<button  *ngIf="seeSat == false" class = "btn btn-secondary"  (click)="toggleSat()">SAT</button> 
+<button  *ngIf="seeSat" class = "btn btn-primary"  (click)="toggleSat()">SAT</button> |
+<button  *ngIf="seeSun == false" class = "btn btn-secondary" (click)="toggleSun()">SUN</button>
+<button  *ngIf="seeSun" class = "btn btn-primary" (click)="toggleSun()">SUN</button>
+</div>
+<div id="days">
+<div id="monday" class = "toggle" *ngIf="seeMon">
+    
+    <button (click) = "monMorn()" *ngIf="data.availability.monday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "monMorn()" *ngIf="data.availability.monday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "monDay()" *ngIf="data.availability.monday.day"  class="btn btn-success">Day</button>
+    <button (click) = "monDay()"  *ngIf="data.availability.monday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "monANoon()" *ngIf="data.availability.monday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "monANoon()" *ngIf="data.availability.monday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "monEve()" *ngIf="data.availability.monday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "monEve()" *ngIf="data.availability.monday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "monNight()" *ngIf="data.availability.monday.night" class="btn btn-success">Night</button>
+    <button (click) = "monNight()" *ngIf="data.availability.monday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="tuesday" class = "toggle" *ngIf="seeTue">    
+    <button (click) = "tueMorn()" *ngIf="data.availability.tuesday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "tueMorn()" *ngIf="data.availability.tuesday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "tueDay()" *ngIf="data.availability.tuesday.day"  class="btn btn-success">Day</button>
+    <button (click) = "tueDay()"  *ngIf="data.availability.tuesday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "tueANoon()" *ngIf="data.availability.tuesday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "tueANoon()" *ngIf="data.availability.tuesday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "tueEve()" *ngIf="data.availability.tuesday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "tueEve()" *ngIf="data.availability.tuesday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "tueNight()" *ngIf="data.availability.tuesday.night" class="btn btn-success">Night</button>
+    <button (click) = "tueNight()" *ngIf="data.availability.tuesday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="wednesday" class = "toggle" *ngIf="seeWed">    
+    <button (click) = "wedMorn()" *ngIf="data.availability.wednesday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "wedMorn()" *ngIf="data.availability.wednesday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "wedDay()" *ngIf="data.availability.wednesday.day"  class="btn btn-success">Day</button>
+    <button (click) = "wedDay()"  *ngIf="data.availability.wednesday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "wedANoon()" *ngIf="data.availability.wednesday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "wedANoon()" *ngIf="data.availability.wednesday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "wedEve()" *ngIf="data.availability.wednesday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "wedEve()" *ngIf="data.availability.wednesday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "wedNight()" *ngIf="data.availability.wednesday.night" class="btn btn-success">Night</button>
+    <button (click) = "wedNight()" *ngIf="data.availability.wednesday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="thursday" class = "toggle" *ngIf="seeThr">    
+    <button (click) = "thrMorn()" *ngIf="data.availability.thursday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "thrMorn()" *ngIf="data.availability.thursday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "thrDay()" *ngIf="data.availability.thursday.day"  class="btn btn-success">Day</button>
+    <button (click) = "thrDay()"  *ngIf="data.availability.thursday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "thrANoon()" *ngIf="data.availability.thursday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "thrANoon()" *ngIf="data.availability.thursday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "thrEve()" *ngIf="data.availability.thursday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "thrEve()" *ngIf="data.availability.thursday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "thrNight()" *ngIf="data.availability.thursday.night" class="btn btn-success">Night</button>
+    <button (click) = "thrNight()" *ngIf="data.availability.thursday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="friday" class = "toggle" *ngIf="seeFri">    
+    <button (click) = "friMorn()" *ngIf="data.availability.friday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "friMorn()" *ngIf="data.availability.friday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "friDay()" *ngIf="data.availability.friday.day"  class="btn btn-success">Day</button>
+    <button (click) = "friDay()"  *ngIf="data.availability.friday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "friANoon()" *ngIf="data.availability.friday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "friANoon()" *ngIf="data.availability.friday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "friEve()" *ngIf="data.availability.friday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "friEve()" *ngIf="data.availability.friday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "friNight()" *ngIf="data.availability.friday.night" class="btn btn-success">Night</button>
+    <button (click) = "friNight()" *ngIf="data.availability.friday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="saturday" class = "toggle" *ngIf="seeSat">    
+    <button (click) = "satMorn()" *ngIf="data.availability.saturday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "satMorn()" *ngIf="data.availability.saturday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "satDay()" *ngIf="data.availability.saturday.day"  class="btn btn-success">Day</button>
+    <button (click) = "satDay()"  *ngIf="data.availability.saturday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "satANoon()" *ngIf="data.availability.saturday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "satANoon()" *ngIf="data.availability.saturday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "satEve()" *ngIf="data.availability.saturday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "satEve()" *ngIf="data.availability.saturday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "satNight()" *ngIf="data.availability.saturday.night" class="btn btn-success">Night</button>
+    <button (click) = "satNight()" *ngIf="data.availability.saturday.night == false" class="btn btn-danger">Night</button>
+</div>
+<div id="sunday" class = "toggle" *ngIf="seeSun" >    
+    <button (click) = "sunMorn()" *ngIf="data.availability.sunday.morning" class="btn btn-success">Morning</button>
+    <button (click) = "sunMorn()" *ngIf="data.availability.sunday.morning == false" class="btn btn-danger">Morning</button>
+    <button (click) = "sunDay()" *ngIf="data.availability.sunday.day"  class="btn btn-success">Day</button>
+    <button (click) = "sunDay()"  *ngIf="data.availability.sunday.day == false"  class="btn btn-danger">Day</button>
+    <button (click) = "sunANoon()" *ngIf="data.availability.sunday.afternoon" class="btn btn-success">Afternoon</button>
+    <button (click) = "sunANoon()" *ngIf="data.availability.sunday.afternoon == false" class="btn btn-danger">Afternoon</button>
+    <button (click) = "sunEve()" *ngIf="data.availability.sunday.evening" class="btn btn-success">Evening</button>
+    <button (click) = "sunEve()" *ngIf="data.availability.sunday.evening == false" class="btn btn-danger">Evening</button>
+    <button (click) = "sunNight()" *ngIf="data.availability.sunday.night" class="btn btn-success">Night</button>
+    <button (click) = "sunNight()" *ngIf="data.availability.sunday.night == false" class="btn btn-danger">Night</button>
+</div>
+</div>
+<button id="submit" (click)="submitForm()" class="btn btn-primary" >Submit Availability</button>

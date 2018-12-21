@@ -11,6 +11,7 @@ import { resetComponentState } from '@angular/core/src/render3/state';
 export class ViewCharacterComponent implements OnInit {
   pId: any;
   cId: any;
+  message : any
   currentCharacter: any;
 
   constructor(
@@ -21,6 +22,7 @@ export class ViewCharacterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.message = {}
     console.log("View init")
     this._route.params.subscribe((params: Params) => {
       this.cId = params.cId
@@ -68,8 +70,9 @@ export class ViewCharacterComponent implements OnInit {
     console.log(this.cId)
     let observable = this._lobby.deleteCharacter(this.cId);
     observable.subscribe(data => {
+      this.message = data
       console.log("Data found:",data)
-      if(data.message == "Successfully deleted character") {
+      if(this.message.message == "Successfully deleted character") {
         let observable = this._lobby.removeCharacter(this.pId, this.cId);
         observable.subscribe(data => {
           console.log("Data found:", data)

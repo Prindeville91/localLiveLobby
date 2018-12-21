@@ -10,6 +10,7 @@ export class PlayerDashComponent implements OnInit {
   id: any;
   allCharcters: any;
   bIsCharacter: Boolean;
+  temp : any
   constructor(
     private _route: ActivatedRoute,
     private _activatedroute: ActivatedRoute,
@@ -17,6 +18,7 @@ export class PlayerDashComponent implements OnInit {
     private _lobby: LobbyService
   ) { }
   ngOnInit() {
+    this.temp = {}
     this._route.params.subscribe((params: Params) => {
       this.id = params.id
     })
@@ -47,8 +49,9 @@ export class PlayerDashComponent implements OnInit {
   getAllCharacters() {
     let observable = this._lobby.getAllCharacters(this.id);
     observable.subscribe(data => {
-      console.log("Data found:", data.characters)
-      this.isThereCharacters(data.characters)
+      this.temp = data
+      console.log("Data found:", this.temp.characters)
+      this.isThereCharacters(this.temp.characters)
     })
   }
 
